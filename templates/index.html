@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+
+    <div class="header">
+        <h1>Storify</h1>
+    </div>
+
+    <div>
+
+        <div class="container_actions">
+            <a href="{{ url_for('main.create') }}">Criar História</a>
+        </div>  
+
+        <div class="container_content">
+            <p>História 1</p>
+            <h1>Stories</h1>
+
+                <ul>
+                    {% for story in stories %}
+                    <li><a href="{{ url_for('main.story', story_id=story['id']) }}">{{ story['title'] }}</a></li>
+                    {% endfor %}
+                </ul>
+
+
+           
+            </div>
+
+    </div>
+
+    </div>
+
+</div>
+    
+</body>
+</html>
